@@ -1,0 +1,26 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p> <%= startingContent %> </p>
+
+<!-- to target the title only, add .title at the end -->
+
+<!-- posts.forEach(function(post){
+    console.log(post.title);
+}); -->
+
+<% posts.forEach(function(post){ %>
+    <!-- this renders the posts on the home page -->
+    <h1> <%= post.title %> </h1>
+    <!-- substring will truncate -->
+    <p> 
+        <%= post.content.substring(0, 100) + " ..." %> 
+        <a href='/posts/<%= post.title %>'> Read More </a>
+    </p>
+    
+<% }); %>
+
+
+
+<%- include("partials/footer") -%>
